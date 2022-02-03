@@ -1,0 +1,11 @@
+USE `gamebar`;
+
+ALTER TABLE `products` 
+ADD INDEX `catid_fk_idx` (`categoty_id` ASC) VISIBLE;
+
+ALTER TABLE `products` 
+ADD CONSTRAINT `catid_fk`
+  FOREIGN KEY (`category_id`)
+  REFERENCES `categories` (`id`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
